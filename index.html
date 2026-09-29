@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MH Collection | Artificial Jewellery</title>
+  <meta name="description" content="Anti-tarnish, skin-friendly artificial jewellery with a 1 year colour warranty. Earrings, necklaces, bracelets, rings, anklets and sets.">
+  <meta name="theme-color" content="#800000">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Announcement bar (text is rotated by script.js) -->
+  <div class="announce" role="status"><span id="announceText"></span></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <button class="icon-btn menu-btn" data-open="mobileNav" aria-label="Open menu"><span data-ic="menu"></span></button>
+
+      <nav class="nav" aria-label="Main">
+        <a href="#/home" data-nav="home">Home</a>
+        <a href="#/all-products" data-nav="all-products">All Products</a>
+        <a href="#/new-arrivals" data-nav="new-arrivals">New Arrivals</a>
+        <a href="#/best-sellers" data-nav="best-sellers">Best Sellers</a>
+        <div class="dropdown">
+          <button class="drop-btn" aria-haspopup="true">Shop by Category <span data-ic="chevron"></span></button>
+          <div class="drop-menu" id="catMenu"></div>
+        </div>
+      </nav>
+
+      <a href="#/home" class="logo" aria-label="MH Collection home">
+        <span class="logo-mh">MH</span><span class="logo-col">collection</span>
+      </a>
+
+      <div class="header-icons">
+        <button class="icon-btn" data-open="searchModal" aria-label="Search"><span data-ic="search"></span></button>
+        <button class="icon-btn" data-open="authModal" aria-label="Account"><span data-ic="user"></span></button>
+        <button class="icon-btn cart-btn" data-open="cartDrawer" aria-label="Open cart"><span data-ic="bag"></span><span class="badge" id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- The four pages (Home, All Products, New Arrivals, Best Sellers), product pages and categories render here -->
+  <main id="app"></main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <!-- Overlay behind drawers and modals -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Mobile menu -->
+  <aside class="panel drawer drawer-left" id="mobileNav" aria-label="Menu">
+    <div class="panel-head"><strong>Menu</strong><button class="icon-btn" data-close aria-label="Close"><span data-ic="close"></span></button></div>
+    <div class="panel-body mobile-links" id="mobileLinks"></div>
+  </aside>
+
+  <!-- Cart drawer -->
+  <aside class="panel drawer" id="cartDrawer" aria-label="Cart">
+    <div class="panel-head"><strong>Your cart</strong><button class="icon-btn" data-close aria-label="Close cart"><span data-ic="close"></span></button></div>
+    <div class="panel-body" id="cartBody"></div>
+    <div class="panel-foot" id="cartFoot"></div>
+  </aside>
+
+  <!-- Search -->
+  <section class="panel modal modal-top" id="searchModal" aria-label="Search">
+    <div class="search-box">
+      <span data-ic="search"></span>
+      <input type="search" id="searchInput" placeholder="Search bracelets, earrings, necklaces..." autocomplete="off">
+      <button class="icon-btn" data-close aria-label="Close search"><span data-ic="close"></span></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </section>
+
+  <!-- Account -->
+  <section class="panel modal" id="authModal" aria-label="Account">
+    <div class="panel-head"><strong id="authTitle">Account</strong><button class="icon-btn" data-close aria-label="Close"><span data-ic="close"></span></button></div>
+    <div class="panel-body" id="authBody"></div>
+  </section>
+
+  <!-- Checkout -->
+  <section class="panel modal modal-wide" id="checkoutModal" aria-label="Checkout">
+    <div class="panel-head"><strong>Checkout</strong><button class="icon-btn" data-close aria-label="Close"><span data-ic="close"></span></button></div>
+    <div class="panel-body" id="checkoutBody"></div>
+  </section>
+
+  <!-- Info (shipping, warranty, returns...) -->
+  <section class="panel modal" id="infoModal" aria-label="Information">
+    <div class="panel-head"><strong id="infoTitle"></strong><button class="icon-btn" data-close aria-label="Close"><span data-ic="close"></span></button></div>
+    <div class="panel-body prose" id="infoBody"></div>
+  </section>
+
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"></a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
